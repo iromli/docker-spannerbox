@@ -4,3 +4,4 @@
 # include required files/directories
 !entrypoint.sh
 !bin
+!version.txt
