@@ -1,7 +1,10 @@
 # spannerbox
 
 `spannerbox` is an image that contains tools to work with Spanner locally.
-This means this image **MUST NOT** be used in production.
+
+**WARNING!!**
+
+`spannerbox` **MUST NOT** be used in production.
 
 ## Batteries Included
 
