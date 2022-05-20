@@ -9,13 +9,16 @@ FROM gcr.io/cloud-spanner-emulator/emulator AS emulator
 
 FROM debian:bookworm-slim
 
-RUN apt-get update -y && apt-get install -y python3
+RUN apt-get update -y && apt-get install -y python3 tini
 
 COPY --from=gc /opt/google-cloud-sdk /opt/google-cloud-sdk
 COPY --from=emulator emulator_main /
 COPY --from=emulator gateway_main /
 
-ENV PATH="/opt/google-cloud-sdk/bin:${PATH}"
+ENV PATH="/opt/google-cloud-sdk/bin:${PATH}" \
+    GOOGLE_PROJECT_ID=test-project \
+    SPANNER_INSTANCE_ID=test-instance \
+    SPANNER_DATABASE_ID=test-database
 
 # =======
 # cleanup
@@ -24,4 +27,6 @@ ENV PATH="/opt/google-cloud-sdk/bin:${PATH}"
 RUN rm -rf /var/lib/apt/lists/*
 
 COPY ./entrypoint.sh /entrypoint.sh
+
+ENTRYPOINT ["tini", "-g", "--"]
 CMD ["bash", "entrypoint.sh"]
