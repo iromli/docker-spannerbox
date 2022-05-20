@@ -1,6 +1,6 @@
 # default image name
 IMAGE_NAME?=iromli/spannerbox
-VERSION=$(shell cat version.txt)
+VERSION=$(shell cat version.txt | cut -d '-' -f 1)-dev
 
 .DEFAULT_GOAL:=build
 
