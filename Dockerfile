@@ -17,8 +17,8 @@ COPY --from=emulator gateway_main /
 
 ENV PATH="/opt/google-cloud-sdk/bin:${PATH}" \
     GOOGLE_PROJECT_ID=test-project \
-    SPANNER_INSTANCE_ID=test-instance \
-    SPANNER_DATABASE_ID=test-database
+    GOOGLE_SPANNER_INSTANCE_ID=test-instance \
+    GOOGLE_SPANNER_DATABASE_ID=test-database
 
 # =======
 # cleanup

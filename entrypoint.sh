@@ -19,21 +19,21 @@ create_config() {
 }
 
 create_instance() {
-    echo "[I] Creating Spanner instance $SPANNER_INSTANCE_ID (if not exist)"
+    echo "[I] Creating Spanner instance $GOOGLE_SPANNER_INSTANCE_ID (if not exist)"
 
-    has_instance=$(gcloud spanner instances list | grep "$SPANNER_INSTANCE_ID") ||:
+    has_instance=$(gcloud spanner instances list | grep "$GOOGLE_SPANNER_INSTANCE_ID") ||:
     if [ -z "$has_instance" ]; then
-        gcloud spanner instances create "$SPANNER_INSTANCE_ID" \
+        gcloud spanner instances create "$GOOGLE_SPANNER_INSTANCE_ID" \
             --config=emulator-config --description="Test Instance" --nodes=1
     fi
 }
 
 create_database() {
-    echo "[I] Creating Spanner database $SPANNER_DATABASE_ID (if not exist)"
+    echo "[I] Creating Spanner database $GOOGLE_SPANNER_DATABASE_ID (if not exist)"
 
-    has_database=$(gcloud spanner databases list --instance="$SPANNER_INSTANCE_ID" | grep "$SPANNER_DATABASE_ID") ||:
+    has_database=$(gcloud spanner databases list --instance="$GOOGLE_SPANNER_INSTANCE_ID" | grep "$GOOGLE_SPANNER_DATABASE_ID") ||:
     if [ -z "$has_database" ]; then
-        gcloud spanner databases create "$SPANNER_DATABASE_ID" --instance="$SPANNER_INSTANCE_ID"
+        gcloud spanner databases create "$GOOGLE_SPANNER_DATABASE_ID" --instance="$GOOGLE_SPANNER_INSTANCE_ID"
     fi
 }
 
