@@ -33,7 +33,8 @@ RUN go install github.com/cloudspannerecosystem/spanner-cli@${SPANNER_CLI_VERSIO
 FROM debian:bookworm-slim
 
 RUN apt-get update -y \
-    && apt-get install -y python3 tini
+    && apt-get install -y python3 tini \
+    && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p /opt/spannerbox/bin
 
@@ -42,7 +43,6 @@ COPY --from=emulator gateway_main /opt/spannerbox/bin/
 COPY --from=golang /go/bin/spanner-cli /opt/spannerbox/bin/
 COPY --from=gcloud /opt/google-cloud-sdk /opt/google-cloud-sdk
 
-COPY ./entrypoint.sh /opt/spannerbox/entrypoint.sh
 COPY ./bin/ /opt/spannerbox/bin/
 
 ENV PATH="/opt/google-cloud-sdk/bin:/opt/spannerbox/bin:$PATH" \
@@ -50,8 +50,5 @@ ENV PATH="/opt/google-cloud-sdk/bin:/opt/spannerbox/bin:$PATH" \
     SPANNER_INSTANCE_ID=test-instance \
     SPANNER_DATABASE_ID=test-database
 
-# cleanup
-RUN rm -rf /var/lib/apt/lists/*
-
 ENTRYPOINT ["tini", "-g", "--"]
-CMD ["bash", "/opt/spannerbox/entrypoint.sh"]
+CMD ["emulator"]
