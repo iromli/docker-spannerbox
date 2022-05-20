@@ -1,6 +1,7 @@
 # spannerbox
 
-`spannerbox` is an image contains pre-configured Spanner emulator (with batteries included).
+`spannerbox` is an image that contains tools to work with Spanner locally.
+This means this image **MUST NOT** be used in production.
 
 ## Batteries Included
 
@@ -42,7 +43,7 @@ docker exec -ti spanner cli
 ## Credits
 
 - [emulator-samples](https://github.com/cloudspannerecosystem/emulator-samples/tree/master/docker) for the inspiration
-- [spanner-cli](https://github.com/cloudspannerecosystem/spanner-cli) for the CLI access
+- [spanner-cli](https://github.com/cloudspannerecosystem/spanner-cli) for the command-line access
 
 ## Disclaimer
 
