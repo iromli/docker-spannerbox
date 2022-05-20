@@ -2,8 +2,6 @@
 
 `spannerbox` is an image contains pre-configured Spanner emulator.
 
-The image includes `gcloud` to initialize config, instance, and database.
-
 ## Usage
 
 The following environment variables can be used to customize `spannerbox` container:
