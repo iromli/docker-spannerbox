@@ -1,6 +1,6 @@
 # spannerbox
 
-`spannerbox` is an image that contains tools to work with Spanner locally.
+`spannerbox` is a set of tools to work with Spanner locally distributed as docker image.
 
 **WARNING!!**
 
@@ -35,7 +35,10 @@ docker run \
     iromli/spannerbox:$VERSION emulator
 ```
 
-**NOTE:** see [Releases](https://github.com/iromli/docker-spannerbox/releases) for available `$VERSION`.
+<details>
+    <summary><b>NOTE</b> about <code>$VERSION</code></summary>
+   <p>See <a href="https://github.com/iromli/docker-spannerbox/releases">Releases</a> for available <code>$VERSION</code>. The <code>v</code> prefix must be omitted when using tag, for example: <code>spannerbox:1.0.0</code> instead of <code>spannerbox:v1.0.0</code>.</p>
+</details>
 
 The database can be accessed using command as seen below:
 
