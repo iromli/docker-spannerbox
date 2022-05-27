@@ -23,8 +23,8 @@ FROM gcr.io/cloud-spanner-emulator/emulator AS emulator
 
 FROM golang:bullseye AS golang
 
-ARG SPANNER_CLI_VERSION=v0.9.11
-RUN go install github.com/cloudspannerecosystem/spanner-cli@${SPANNER_CLI_VERSION}
+RUN go install github.com/cloudspannerecosystem/spanner-cli@v0.9.11
+RUN go install github.com/cloudspannerecosystem/spanner-dump@v0.2.1
 
 # ===
 # app
@@ -41,6 +41,7 @@ RUN mkdir -p /opt/spannerbox/bin
 COPY --from=emulator emulator_main /opt/spannerbox/bin/
 COPY --from=emulator gateway_main /opt/spannerbox/bin/
 COPY --from=golang /go/bin/spanner-cli /opt/spannerbox/bin/
+COPY --from=golang /go/bin/spanner-dump /opt/spannerbox/bin/
 COPY --from=gcloud /opt/google-cloud-sdk /opt/google-cloud-sdk
 
 COPY ./bin/ /opt/spannerbox/bin/

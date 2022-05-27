@@ -8,8 +8,9 @@
 
 ## Batteries Included
 
-- emulator to bootstrap instance and database
-- CLI to interact with database
+- `emulator` command to bootstrap instance and database
+- `cli` command to interact with database
+- `dump` command to export database in text format
 
 ## Usage
 
@@ -49,7 +50,8 @@ docker exec -ti spanner cli
 ## Credits
 
 - [emulator-samples](https://github.com/cloudspannerecosystem/emulator-samples/tree/master/docker) for the inspiration
-- [spanner-cli](https://github.com/cloudspannerecosystem/spanner-cli) for the command-line access
+- [spanner-cli](https://github.com/cloudspannerecosystem/spanner-cli)
+- [spanner-dump](https://github.com/cloudspannerecosystem/spanner-dump)
 
 ## Disclaimer
 
