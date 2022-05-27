@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.0-alpha.2](https://github.com/iromli/docker-spannerbox/compare/v1.0.0-alpha.1...v1.0.0-alpha.2) (2022-05-27)
+
+
+### Features
+
+* add dump command to export database into text format ([99f853b](https://github.com/iromli/docker-spannerbox/commit/99f853b178198241522fc0ffaccfde3c12b51b31))
+
 ## 1.0.0-alpha.1 (2022-05-21)
 
 
