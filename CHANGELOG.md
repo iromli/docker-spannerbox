@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.0.0-alpha.3](https://github.com/iromli/docker-spannerbox/compare/v1.0.0-alpha.2...v1.0.0-alpha.3) (2022-05-31)
+
+
+### Features
+
+* add spanner-truncate ([631e130](https://github.com/iromli/docker-spannerbox/commit/631e13025be6727473fe474fb2ccac43d1d882f5))
+
+
+### build
+
+* bump version ([f73ceb2](https://github.com/iromli/docker-spannerbox/commit/f73ceb2740f61b5380037b0b0317f95744c3b36f))
+
 ## [1.0.0-alpha.2](https://github.com/iromli/docker-spannerbox/compare/v1.0.0-alpha.1...v1.0.0-alpha.2) (2022-05-27)
 
 
