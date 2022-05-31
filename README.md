@@ -1,6 +1,6 @@
 # spannerbox
 
-`spannerbox` is a set of tools to work with Spanner locally distributed as docker image.
+`spannerbox` is a set of tools to work with Spanner locally, distributed as docker image.
 
 **WARNING!!**
 
@@ -8,9 +8,10 @@
 
 ## Batteries Included
 
-- `emulator` command to bootstrap instance and database
-- `cli` command to interact with database
-- `dump` command to export database in text format
+- `emulator`
+- `spanner-cli`
+- `spanner-dump`
+- `spanner-truncate`
 
 ## Usage
 
@@ -44,7 +45,7 @@ docker run \
 The database can be accessed using command as seen below:
 
 ```
-docker exec -ti spanner cli
+docker exec -ti spanner spanner-cli
 ```
 
 ## Credits
@@ -52,6 +53,7 @@ docker exec -ti spanner cli
 - [emulator-samples](https://github.com/cloudspannerecosystem/emulator-samples/tree/master/docker) for the inspiration
 - [spanner-cli](https://github.com/cloudspannerecosystem/spanner-cli)
 - [spanner-dump](https://github.com/cloudspannerecosystem/spanner-dump)
+- [spanner-truncate](https://github.com/cloudspannerecosystem/spanner-truncate)
 
 ## Disclaimer
 
