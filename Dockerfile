@@ -23,9 +23,9 @@ FROM gcr.io/cloud-spanner-emulator/emulator AS emulator
 
 FROM golang:bullseye AS golang
 
-RUN go install github.com/cloudspannerecosystem/spanner-cli@v0.9.11
+RUN go install github.com/cloudspannerecosystem/spanner-cli@v0.9.15
 RUN go install github.com/cloudspannerecosystem/spanner-dump@v0.2.1
-RUN go install github.com/cloudspannerecosystem/spanner-truncate@51fa1cbec834b47670238dfb6ef590459514f862
+RUN go install github.com/cloudspannerecosystem/spanner-truncate@a6eec6568c47f3ba6da61d9d4585c4353e0cc18b
 
 # ===
 # app
