@@ -40,8 +40,8 @@ RUN apt-get update -y \
 RUN mkdir -p /opt/spannerbox/bin
 
 COPY --from=gcloud /opt/google-cloud-sdk /opt/google-cloud-sdk
-COPY --from=emulator emulator_main /opt/spannerbox/bin/
-COPY --from=emulator gateway_main /opt/spannerbox/bin/
+COPY --from=emulator /gateway_main.runfiles/com_google_cloud_spanner_emulator/binaries/emulator_main /opt/spannerbox/bin/
+COPY --from=emulator /gateway_main.runfiles/com_google_cloud_spanner_emulator/binaries/gateway_main_/gateway_main /opt/spannerbox/bin/
 COPY --from=golang /go/bin/spanner-cli /opt/spannerbox/bin/
 COPY --from=golang /go/bin/spanner-dump /opt/spannerbox/bin/
 COPY --from=golang /go/bin/spanner-truncate /opt/spannerbox/bin/
