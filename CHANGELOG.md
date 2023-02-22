@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/iromli/docker-spannerbox/compare/v1.0.0...v1.0.1) (2023-02-22)
+
+
+### Bug Fixes
+
+* update binaries location to copy from ([367c526](https://github.com/iromli/docker-spannerbox/commit/367c526c4628ce4d17c72fecb56f643149eca5a1))
+
 ## [1.0.0](https://github.com/iromli/docker-spannerbox/compare/v1.0.0-alpha.3...v1.0.0) (2022-11-06)
 
 
