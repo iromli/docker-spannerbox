@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/iromli/docker-spannerbox/compare/v1.0.1...v1.0.2) (2023-06-30)
+
+
+### Bug Fixes
+
+* missing emulator_main and gateway_main binaries ([28361ca](https://github.com/iromli/docker-spannerbox/commit/28361ca4f625911e49a7d02e0edb36ed5dc42fab))
+
 ## [1.0.1](https://github.com/iromli/docker-spannerbox/compare/v1.0.0...v1.0.1) (2023-02-22)
 
 
