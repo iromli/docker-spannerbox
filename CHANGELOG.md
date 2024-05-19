@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.0](https://github.com/iromli/docker-spannerbox/compare/v1.0.2...v1.1.0) (2024-05-19)
+
+
+### build
+
+* add labels to automate local build script ([36b7cfa](https://github.com/iromli/docker-spannerbox/commit/36b7cfaf36f986226162446c91376e18fdd33237))
+
+
+### Features
+
+* bump version of included components ([9c0df78](https://github.com/iromli/docker-spannerbox/commit/9c0df787f1c046af1d29ba88304da923c3318921))
+
 ## [1.0.2](https://github.com/iromli/docker-spannerbox/compare/v1.0.1...v1.0.2) (2023-06-30)
 
 
