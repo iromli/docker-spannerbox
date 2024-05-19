@@ -1,9 +1,10 @@
-# default image name
-IMAGE_NAME?=iromli/spannerbox
-VERSION=$(shell cat version.txt | cut -d '-' -f 1)-dev
+IMAGE_VERSION?=$(shell grep -Po 'org.opencontainers.image.version="\K.*?(?=")' Dockerfile)-dev
+IMAGE_URL=$(shell grep -Po 'org.opencontainers.image.url="\K.*?(?=")' Dockerfile)
+IMAGE?=${IMAGE_URL}:${IMAGE_VERSION}
 
-.DEFAULT_GOAL:=build
+.PHONY: test clean all build
+.DEFAULT_GOAL := build
 
 build:
-	@echo "[I] Building image ${IMAGE_NAME}:${VERSION}"
-	@docker build --rm --force-rm -t ${IMAGE_NAME}:${VERSION} .
+	@echo "[I] Building image ${IMAGE}"
+	@docker build --rm --force-rm -t ${IMAGE} .

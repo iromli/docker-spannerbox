@@ -53,5 +53,12 @@ ENV PATH="/opt/google-cloud-sdk/bin:/opt/spannerbox/bin:$PATH" \
     SPANNER_DATABASE_ID=test-database \
     SPANNER_EMULATOR_HOST=0.0.0.0:9010
 
+LABEL org.opencontainers.image.url="iromli/spannerbox" \
+    org.opencontainers.image.authors="isman.firmansyah@gmail.com" \
+    org.opencontainers.image.vendor="" \
+    org.opencontainers.image.version="1.1.0" \
+    org.opencontainers.image.title="Spannerbox" \
+    org.opencontainers.image.description="spannerbox is a set of tools to work with Spanner emulator"
+
 ENTRYPOINT ["tini", "-g", "--"]
 CMD ["emulator"]
