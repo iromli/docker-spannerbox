@@ -11,7 +11,7 @@ ARG GCLOUD_VERSION=386.0.0-linux-x86_64
 RUN wget -q https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-${GCLOUD_VERSION}.tar.gz -O /tmp/cloudsdk.tar.gz \
     && tar xf /tmp/cloudsdk.tar.gz -C /opt/
 
-ARG SPANNER_EMULATOR_VERSION=1.5.6
+ARG SPANNER_EMULATOR_VERSION=1.5.7
 RUN wget -q https://storage.googleapis.com/cloud-spanner-emulator/releases/${SPANNER_EMULATOR_VERSION}/cloud-spanner-emulator_linux_amd64-${SPANNER_EMULATOR_VERSION}.tar.gz -O /tmp/spanner-emulator.tar.gz \
     && tar xf /tmp/spanner-emulator.tar.gz -C /opt
 
@@ -21,9 +21,9 @@ RUN wget -q https://storage.googleapis.com/cloud-spanner-emulator/releases/${SPA
 
 FROM golang:bullseye AS golang
 
-RUN go install github.com/cloudspannerecosystem/spanner-cli@v0.9.15
-RUN go install github.com/cloudspannerecosystem/spanner-dump@v0.2.1
-RUN go install github.com/cloudspannerecosystem/spanner-truncate@a6eec6568c47f3ba6da61d9d4585c4353e0cc18b
+RUN go install github.com/cloudspannerecosystem/spanner-cli@v0.10.1 \
+    && go install github.com/cloudspannerecosystem/spanner-dump@v0.2.2 \
+    && go install github.com/cloudspannerecosystem/spanner-truncate@v0.1.4
 
 # ===
 # app
